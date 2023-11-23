@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Identifier_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Identifier_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Identifier_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PaymentMode_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PaymentMode_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PaymentMode_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Cust_ReferenceNumber_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Cust_ReferenceNumber_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Cust_ReferenceNumber_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Debit_AccountN">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Debit_AccountN</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Debit_AccountN</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CurencyCode_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CurencyCode_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CurencyCode_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Txn_Date_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Txn_Date_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Txn_Date_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Txn_Currency_Code_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Txn_Currency_Code_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Txn_Currency_Code_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Amount_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Amount_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Amount_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BeneficiaryName_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BeneficiaryName_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BeneficiaryName_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BeneficiaryCode_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BeneficiaryCode_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BeneficiaryCode_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_AccNo_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_AccNo_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_AccNo_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Currency_Code_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Currency_Code_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Currency_Code_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_AddressLine1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_AddressLine1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_AddressLine1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_AddressLine2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_AddressLine2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_AddressLine2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_AddressLine3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_AddressLine3</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_AddressLine3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_AddressLine4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_AddressLine4</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_AddressLine4</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_AddressLine5">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_AddressLine5</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_AddressLine5</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BeneficiaryMailing_Name">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BeneficiaryMailing_Name</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BeneficiaryMailing_Name</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Mailing_Address_Line1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Mailing_Address_Line1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Mailing_Address_Line1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Mailing_Address_Line2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Mailing_Address_Line2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Mailing_Address_Line2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Mailing_Address_Line3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Mailing_Address_Line3</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Mailing_Address_Line3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Mailing_Address_Line4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Mailing_Address_Line4</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Mailing_Address_Line4</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Mailing_Address_Line5">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Mailing_Address_Line5</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Mailing_Address_Line5</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Drawee_BankCode_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Drawee_BankCode_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Drawee_BankCode_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_BankName_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_BankName_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_BankName_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Payment_Detail1_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Payment_Detail1_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Payment_Detail1_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Payment_Detail2_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Payment_Detail2_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Payment_Detail2_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Cheque_No_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Cheque_No_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Cheque_No_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Cheque_Date_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Cheque_Date_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Cheque_Date_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EMai_ID_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EMai_ID_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EMai_ID_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Payable_Loc_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Payable_Loc_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Payable_Loc_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Del_Loc_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Del_Loc_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Del_Loc_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Del_To_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Del_To_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Del_To_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Print_Loc_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Print_Loc_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Print_Loc_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Account_Type_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Account_Type_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Account_Type_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_BankNameCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_BankNameCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_BankNameCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Bank_Addr_1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Bank_Addr_1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Bank_Addr_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Bank_Addr_2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Bank_Addr_2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Bank_Addr_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beneficiary_Bank_Addr_3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Beneficiary_Bank_Addr_3</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Beneficiary_Bank_Addr_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OverseasCharges">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>OverseasCharges</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>OverseasCharges</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BeneficiaryMobile_Number_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BeneficiaryMobile_Number_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BeneficiaryMobile_Number_Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Purpose_Code_Caption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Purpose_Code_Caption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Purpose_Code_Caption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Vendor">
+          <DataField>No_Vendor</DataField>
+        </Field>
+        <Field Name="Name_Vendor">
+          <DataField>Name_Vendor</DataField>
+        </Field>
+        <Field Name="Address_Vendor">
+          <DataField>Address_Vendor</DataField>
+        </Field>
+        <Field Name="Email_VendorBankAcc">
+          <DataField>Email_VendorBankAcc</DataField>
+        </Field>
+        <Field Name="VendorNo_VendorLedgerEntry">
+          <DataField>VendorNo_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="PostingDate_VendorLedgerEntry">
+          <DataField>PostingDate_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="DocumentNo_VendorLedgerEntry">
+          <DataField>DocumentNo_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="Description_VendorLedgerEntry">
+          <DataField>Description_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="CurrencyCode_VendorLedgerEntry">
+          <DataField>CurrencyCode_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="Amount_VendorLedgerEntry">
+          <DataField>Amount_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="Amount_VendorLedgerEntryFormat">
+          <DataField>Amount_VendorLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="RemainingAmount_VendorLedgerEntry">
+          <DataField>RemainingAmount_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="RemainingAmount_VendorLedgerEntryFormat">
+          <DataField>RemainingAmount_VendorLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="dataTotalPayableAmnt_vendorLedger">
+          <DataField>dataTotalPayableAmnt_vendorLedger</DataField>
+        </Field>
+        <Field Name="dataTotalPayableAmnt_vendorLedgerFormat">
+          <DataField>dataTotalPayableAmnt_vendorLedgerFormat</DataField>
+        </Field>
+        <Field Name="DateWorkdate">
+          <DataField>DateWorkdate</DataField>
+        </Field>
+        <Field Name="OriginalAmount_VendorLedgerEntry">
+          <DataField>OriginalAmount_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="OriginalAmount_VendorLedgerEntryFormat">
+          <DataField>OriginalAmount_VendorLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="Name_RecVendor">
+          <DataField>Name_RecVendor</DataField>
+        </Field>
+        <Field Name="BankIFSC">
+          <DataField>BankIFSC</DataField>
+        </Field>
+        <Field Name="bankAccNo">
+          <DataField>bankAccNo</DataField>
+        </Field>
+        <Field Name="VendorBankAccEmail_">
+          <DataField>VendorBankAccEmail_</DataField>
+        </Field>
+        <Field Name="Name_VendorBankAcc">
+          <DataField>Name_VendorBankAcc</DataField>
+        </Field>
+        <Field Name="Address_rec_VendorBankAccount">
+          <DataField>Address_rec_VendorBankAccount</DataField>
+        </Field>
+        <Field Name="Address2_rec_VendorBankAccount">
+          <DataField>Address2_rec_VendorBankAccount</DataField>
+        </Field>
+        <Field Name="City_postCode_rec_VendorBankAccount">
+          <DataField>City_postCode_rec_VendorBankAccount</DataField>
+        </Field>
+        <Field Name="CustomerReferenceNo">
+          <DataField>CustomerReferenceNo</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_VendorLedgerEntry">
+          <DataField>ExternalDocumentNo_VendorLedgerEntry</DataField>
+        </Field>
+        <Field Name="ExterCnt">
+          <DataField>ExterCnt</DataField>
+        </Field>
+        <Field Name="VendorInvoiceDate_VendorLedgerEntry">
+          <DataField>VendorInvoiceDate_VendorLedgerEntry</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
