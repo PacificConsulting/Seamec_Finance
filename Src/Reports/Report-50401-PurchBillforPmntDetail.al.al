@@ -20,7 +20,7 @@ report 50401 "Bill for Pmnt. Detail-Payment"
             dataitem("Approve Payment Vendor"; "Payment Suggestion")
             {
                 DataItemLink = "Vendor No" = FIELD("No.");
-                DataItemTableView = SORTING("Vendor No") where("Print Document" = FILTER('Yes'));//, "Posting Date", "Currency Code")
+                DataItemTableView = SORTING("Vendor No") where("Print Document" = FILTER('Yes'), "Remaining Amount" = filter(< 0), Status = filter('Approve'));//, "Posting Date", "Currency Code",Status=filter('Approve'))
 
                 // WHERE(Open = FILTER(false),
                 //       "Print Document" = FILTER(false));
@@ -64,6 +64,8 @@ report 50401 "Bill for Pmnt. Detail-Payment"
 
                 trigger OnAfterGetRecord()
                 begin
+                    if "Approve Payment Vendor".Status <> "Approve Payment Vendor".Status::Approve then
+                        CurrReport.Skip();
                     VLE.Reset();
                     VLE.SetRange("Document No.", "Approve Payment Vendor"."Invoice No");
                     if VLE.FindFirst() then;

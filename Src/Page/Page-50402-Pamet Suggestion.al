@@ -163,6 +163,23 @@ page 50402 "Payment Suggestion"
                     CurrPage.Update();
                 end;
             }
+            action("Reset All")
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                begin
+                    PayMsme.Reset();
+                    PayMsme.SetRange(Select, true);
+                    PayMsme.SetFilter(Status, '%1', PaySuggestion.Status::Open);//, PaySuggestion.Status::Reject);
+                    if PayMsme.FindSet() then
+                        repeat
+                            PayMsme.Validate(Select, false);
+                            PayMsme.Modify();
+                        until PayMsme.Next() = 0;
+                    Message('Done');
+                    CurrPage.Update();
+                end;
+            }
             action("Process")
             {
                 ApplicationArea = all;

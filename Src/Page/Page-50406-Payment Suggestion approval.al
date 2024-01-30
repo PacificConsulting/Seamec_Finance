@@ -164,6 +164,23 @@ page 50406 "Payment Suggestion Approval"
                     CurrPage.Update();
                 end;
             }
+            action("Reset All")
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                begin
+                    PayMsme.Reset();
+                    PayMsme.SetRange("Select for Approve", true);
+                    PayMsme.SetFilter(Status, '%1', PaySuggestion.Status::"Pending Approval");//, PaySuggestion.Status::Reject);
+                    if PayMsme.FindSet() then
+                        repeat
+                            PayMsme.Validate("Select for Approve", false);
+                            PayMsme.Modify();
+                        until PayMsme.Next() = 0;
+                    Message('Done');
+                    CurrPage.Update();
+                end;
+            }
             action("Approve")
             {
                 ApplicationArea = all;

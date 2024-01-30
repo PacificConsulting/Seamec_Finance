@@ -104,7 +104,7 @@ page 50403 "Approve Payment Vendor"
             action("Bill for RTGS/NEFT Payment")
             {
                 ApplicationArea = all;
-                Caption = 'Bill for RTGS/NEFT Payment IDFC';
+                Caption = 'Bill for RTGS/NEFT Payment IDBI';
                 Image = Report;
                 trigger OnAction()
                 var
@@ -123,12 +123,28 @@ page 50403 "Approve Payment Vendor"
                 trigger OnAction()
                 var
                     Vend: Record Vendor;
+                    recPaySuggestion: Record "Payment Suggestion";
                 begin
+
+                    /* recPaySuggestion.Reset();
+                    recPaySuggestion.SetRange(Select, true);
+                    recPaySuggestion.SetRange("Invoice No", rec."Invoice No");
+                    recPaySuggestion.SetRange("Print Document", true);
+                    recPaySuggestion.SetFilter("Remaining Amount", '<%1', 0);
+                    recPaySuggestion.SetRange(Status, recPaySuggestion.Status::Approve);
+                    recPaySuggestion.SetRange("Bank Voucher Created", false);
+                    if recPaySuggestion.FindSet() then */
                     Vend.Reset();
-                    Vend.SetRange("No.", Rec."Vendor No");
-                    if Vend.FindFirst() then
-                        Report.RunModal(50401, true, true, vend);
+
+                    //Vend.SetRange("No.", Rec."Vendor No");
+                    if Vend.Findset() then
+                        //repeat
+                            Report.RunModal(50401, true, true, vend);
+                    //until vend.Next() = 0;
                 end;
+
+
+                //end;
             }
 
             action("RTGS/NEFT Payment")
@@ -219,6 +235,24 @@ page 50403 "Approve Payment Vendor"
 
         }
     }
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    var
+        RecPaymentSuggestion: Record "Payment Suggestion";
+    begin
+        RecPaymentSuggestion.Reset();
+        RecPaymentSuggestion.SetFilter("Remaining Amount", '<%1', 0);
+        RecPaymentSuggestion.SetRange(Status, RecPaymentSuggestion.Status::Approve);
+        RecPaymentSuggestion.SetRange("Bank Voucher Created", false);
+        RecPaymentSuggestion.SetRange("Print Document", true);
+        if RecPaymentSuggestion.FindSet() then begin
+            repeat
+                RecPaymentSuggestion."Print Document" := false;
+
+                RecPaymentSuggestion.Modify();
+            until RecPaymentSuggestion.Next() = 0;
+        end;
+
+    end;
 
     var
         myInt: Integer;
